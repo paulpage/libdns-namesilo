@@ -1,4 +1,4 @@
-module github.com/libdns/namesilo
+module github.com/paulpage/libdns-namesilo
 
 go 1.18
 
