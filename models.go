@@ -75,7 +75,7 @@ func namesiloRecord(zone string, r libdns.Record) (record, error) {
 
 type namesiloResponse struct {
 	Reply struct {
-		Code           int             `json:"code"`
+		Code           string          `json:"code"`
 		Detail         string          `json:"detail"`
 		ResourceRecord json.RawMessage `json:"resource_record,omitempty"`
 	}

@@ -111,8 +111,8 @@ func (p *Provider) doAPIRequest(req *http.Request, result any) (namesiloResponse
 		return namesiloResponse{}, fmt.Errorf("got error status: HTTP %d: %s", resp.StatusCode, respData.Reply.Detail)
 	}
 
-	if respData.Reply.Code != 300 {
-		return namesiloResponse{}, fmt.Errorf("failed to perform API call: Namesilo API status code %d; %s", respData.Reply.Code, respData.Reply.Detail)
+	if respData.Reply.Code != "300" {
+		return namesiloResponse{}, fmt.Errorf("failed to perform API call: Namesilo API status code %s; %s", respData.Reply.Code, respData.Reply.Detail)
 	}
 
 	if len(respData.Reply.ResourceRecord) > 0 && result != nil {
